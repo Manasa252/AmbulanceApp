@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
     private Button button;
-
+    private Button button2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,10 +22,26 @@ public class MainActivity extends AppCompatActivity {
                 openmapsactivity();
             }
         });
+
+        button=(Button) findViewById(R.id.button3);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openPatientActivity();
+
+            }
+        });
+
+
     }
     public void openmapsactivity()
     {
         Intent intent=new Intent(this,MapsActivity.class);
+        startActivity(intent);
+    }
+    public void openPatientActivity()
+    {
+        Intent intent=new Intent(this,PatientActivity.class);
         startActivity(intent);
     }
 
